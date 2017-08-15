@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Rocket Permium Design</title>
+  <script type="text/javascript">
+  $(document).ready(function() {
+$('#my_form').submit(function(e) {
+  var first_name    = document.getElementById('first_name')
+  var last_name    = document.getElementById('last_name')
+  var subject = document.getElementById('drop_down')
+  var email   = document.getElementById('email')
+  var telephone = document.getElementById('telephone')
+  var message = document.getElementById('message')
+  var checkedValue = null;
+  var services = [];
+
+  if (document.getElementById('test5')){
+    services.push("Requires Web Desgin?");
+  }
+  if (document.getElementById('test6')){
+    services.push("Requires App Development?");
+  }
+  if (document.getElementById('test5')){
+    services.push("Requires Graphic Design?");
+  }
+
+
+  if (!first_name.value || !email.value || !message.value) {
+    alertify.error("Please check your entries");
+    return false;
+  } else {
+    $.ajax({
+      method: 'POST',
+      url: '//formspree.io/AdamMelaku362@gmail.com',
+      data: $('#my_form').serialize(),
+      datatype: 'json'
+    });
+    e.preventDefault();
+    $(this).get(0).reset();
+    alertify.success("Message sent");
+  }
+});
+});
+  </script>
+
+</head>
+<body>
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center" style="color:#5bbfc6">Rocket Premium Design</h1>
+        <div class="row center">
+          <h5 class="header col s12 light" style="color:#878786; font-weight:400">High Tech Solutions for Small Business</h5>
+        </div>
+        <div class="row center">
+          <a href="#contact_us" id="download-button" class="btn-large waves-effect waves-light" style="background-color:#5bbfc6">Contact Us Now</a>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="./images/small_business1.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row" name="services">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">web</i></h2>
+            <h5 class="center"><a name="services" style="color:#212121">Web Development</a></h5>
+
+            <p class="light">Clean, elegant, web design for any small business need.</p>
+
+            <p class="light">We can do both front end and back end infrastructure as well as add on to an existing website.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">phonelink_ring</i></h2>
+            <h5 class="center">App Development</h5>
+
+            <p class="light">Apps are having a greater presense in todays world. We offer services that specialize in designing mobile applicaitons for small businesses. </p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">mode_edit</i></h2>
+            <h5 class="center">Graphic Design</h5>
+
+            <p class="light">Our graphic design services provided the marketing and branding solutions small businesses seek.</p>
+
+            <ul>
+              <li> - Custom Logos</li>
+              <li>- Brochures/Pamphlets</li>
+              <li>- Branding</li>
+              <li>- Other Custom Orders</li>
+            </ul>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">Based in Dallas, run by experienced freelance developers and designers with specialization in small business needs.</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="./images/dallas_skyline.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s6 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4><a name="contact_us" style="color:#212121">Contact Us Now</a></h4>
+          <p class="left-align light">If you're interested in requesting our services, use the form to the right to contact us.</p>
+          <p class="left-align light">Also, if you have any questions regarding your current service or concerns, please contact us. Expect a to your inquiry within 24 hours by phone.</p>
+        </div>
+
+        <form id="my_form" class="col s6" method="post" action="https://formspree.io/AdamMelaku362@gmail.com">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="first_name" name="First Name" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" name="Last Name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="email" name="Email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="telephone" name="Telephone" type="tel" class="validate">
+          <label for="telephone">Telephone</label>
+        </div>
+      <div class="input-field col s6">
+        <select id="drop_down" name="Subject" class="browser-default">
+          <option value="" disabled selected>Select Message Subject</option>
+          <option id="Service Request" name="Service Requested" value="Service Requested">Service Request</option>
+          <option id="Customer Feedback" name="Customer Feedback" value="Customer Feedback">Customer Feedback</option>
+          <option id="Other" name="Other" value="Other">Other</option>
+        </select>
+      </div>
+        <div class="input-field col s6">
+          <p>Services interested in</p>
+          <div class="">
+            <input type="checkbox" id="test5" class="messageCheckbox" name="Web Design" value="Yes"/>
+        <label for="test5">Web Design</label>
+          </div>
+          <div class="">
+            <input type="checkbox" class="messageCheckbox" id="test6" name="App Development" value="Yes" />
+        <label for="test6">App Development</label>
+          </div>
+          <div class="">
+            <input type="checkbox" class="messageCheckbox" id="test7" name="Graphic Design" value="Yes"/>
+          <label for="test7">Graphic Design</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <label for="message" style="font-size:1rem">In detail explain your subject:</label>
+          <textarea id="message" name="Project Summary" rows="16" cols="80"></textarea>
+      </div>
+      <p><input id="mybtn" type="submit" name="submit" value="Send"><span id="status"></span></p>
+    </form>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">Premium Design at a Reasonable Price</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="./images/tech_circut.png" alt="Unsplashed background img 3"></div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a collobartion of freelance specialists based in Dallas, Texas. We specialize in designing technical solutions for small businesses, nonprofits, and startups. </p>
+
+
+        </div>
+
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  </body>
+
+
+</html>
